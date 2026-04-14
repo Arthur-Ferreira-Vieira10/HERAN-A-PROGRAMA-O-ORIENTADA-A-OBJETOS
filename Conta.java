@@ -25,10 +25,9 @@ public abstract class Conta {
     }
 
     public void transferir(double valor, Conta contaDestino) {
-        // Usa o sacar de cada subclasse (que tem sua própria regra)
         double saldoAntes = saldo;
         sacar(valor);
-        // Se o saldo mudou, significa que o saque foi feito
+       
         if (saldo < saldoAntes) {
             contaDestino.saldo += valor;
             System.out.println("Transferência de R$ " + valor + " realizada!");
